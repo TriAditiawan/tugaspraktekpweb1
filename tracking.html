@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Status Pengiriman Bahan Ajar</title>
+  <style>
+  
+  </style>
+</head>
+<body>
+     <div class="navbar">
+    <img src="./assets/logout.png" alt="">
+    <a href="./dashboard.html">SITTA</a>
+    <a href="./stock.html">Informasi Bahan Ajar</a>
+    <a href="./tracking.html">Tracking Pengiriman</a>
+
+    <!-- Dropdown Laporan -->
+    <div class="dropdown">
+      <a href="#">Laporan ▼</a>
+      <div class="dropdown-content">
+        <a href="#">Monitoring Progress DO Bahan Ajar</a>
+        <a href="#">Rekap Bahan Ajar</a>
+      </div>
+    </div>
+
+    <a href="#">Histori Transaksi Bahan Ajar</a>
+ <a href="#" onclick="logout()" class="login">Keluar</a>
+
+
+  </div>
+ <div class="isi">
+  <div class="container">
+    <h2 id="namaPenerima"></h2>
+    <p id="statusPengiriman" style="font-weight:bold;"></p>
+
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+
+    <!-- Detail ekspedisi -->
+    <table id="detailTable">
+      <tr>
+        <th>Ekspedisi</th>
+        <th>Tanggal Kirim</th>
+        <th>Jenis Paket</th>
+        <th>Total Pembayaran</th>
+      </tr>
+      <!-- baris dinamis dari JS -->
+    </table>
+
+    <!-- Riwayat pengiriman -->
+    <div class="timeline" id="timelineContainer">
+      <!-- item timeline dari JS -->
+    </div>
+  </div>
+</div>
+
+<script src="./js/data.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/tracking.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Proteksi halaman — redirect ke login jika belum login
+    checkAuth("./index.html");
+
+    // Menampilkan nama user di navbar/dashboard
+    showUserInfo("#userInfo");
+
+    // Greeting waktu (boleh tetap)
+    const greeting = document.getElementById("greeting");
+    const hour = new Date().getHours();
+    if (hour < 12) greeting.textContent = "Selamat pagi";
+    else if (hour < 18) greeting.textContent = "Selamat siang";
+    else greeting.textContent = "Selamat sore";
+  });
+</script>
+
+
+</body>
+</html>

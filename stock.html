@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informasi Bahan Ajar</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+  <style>
+    /* ====== STYLE TAMBAHAN UNTUK LIST DAN POPUP ====== */
+    .bahan-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .bahan-item {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .bahan-item:hover {
+      transform: scale(1.02);
+    }
+
+    .bahan-item img {
+      width: 50%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .bahan-item h4 {
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .btn-detail {
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-detail:hover {
+      background: #555;
+    }
+
+    /* ====== POPUP ====== */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 400px;
+      position: relative;
+      animation: fadeIn 0.3s;
+    }
+
+    .popup-content img {
+      width: 50%;
+      border-radius: 10px;
+       display: block;
+  margin: 0 auto;
+    }
+
+    .popup-content h3 {
+      margin-bottom: 10px;
+    }
+
+    .popup-content p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #444;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <img src="./assets/logout.png" alt="">
+    <a href="./dashboard.html">SITTA</a>
+    <a href="./stock.html" class="active">Informasi Bahan Ajar</a>
+    <a href="./tracking.html">Tracking Pengiriman</a>
+    <div class="dropdown">
+      <a href="#">Laporan ▼</a>
+      <div class="dropdown-content">
+        <a href="#">Monitoring Progress DO Bahan Ajar</a>
+        <a href="#">Rekap Bahan Ajar</a>
+      </div>
+    </div>
+    <a href="#">Histori Transaksi Bahan Ajar</a>
+  <a href="#" onclick="logout()" class="login">Keluar</a>
+
+
+  </div>
+
+  <!-- DAFTAR BAHAN AJAR -->
+  <div class="isi">
+    <div class="container">
+      <div class="header">Informasi Bahan Ajar</div>
+      <div id="bahanList" class="bahan-list"></div>
+      <div class="footer">© 2025 SITTA — Tri Aditiawan</div>
+    </div>
+  </div>
+
+  <!-- POPUP DETAIL -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" id="closePopup">&times;</span>
+      <img id="popupCover" src="" alt="">
+      <h3 id="popupNama"></h3>
+      <p><strong>Kode Lokasi:</strong> <span id="popupLokasi"></span></p>
+      <p><strong>Kode Barang:</strong> <span id="popupKode"></span></p>
+      <p><strong>Jenis Barang:</strong> <span id="popupJenis"></span></p>
+      <p><strong>Edisi:</strong> <span id="popupEdisi"></span></p>
+      <p><strong>Stok:</strong> <span id="popupStok"></span></p>
+    </div>
+  </div>
+<script src="./js/data.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/stock.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Proteksi halaman — redirect ke login jika belum login
+    checkAuth("./index.html");
+
+    // Menampilkan nama user di navbar/dashboard
+    showUserInfo("#userInfo");
+
+    // Greeting waktu (boleh tetap)
+    const greeting = document.getElementById("greeting");
+    const hour = new Date().getHours();
+    if (hour < 12) greeting.textContent = "Selamat pagi";
+    else if (hour < 18) greeting.textContent = "Selamat siang";
+    else greeting.textContent = "Selamat sore";
+  });
+</script>
+
+</body>
+</html>
+
+

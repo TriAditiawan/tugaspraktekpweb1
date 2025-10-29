@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard SITTA</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    
+    
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <img src="./assets/logout.png" alt="">
+    <a href="./dashboard.html">SITTA</a>
+    <a href="./stock.html">Informasi Bahan Ajar</a>
+    <a href="./tracking.html">Tracking Pengiriman</a>
+
+    <!-- Dropdown Laporan -->
+    <div class="dropdown">
+      <a href="#">Laporan ▼</a>
+      <div class="dropdown-content">
+        <a href="#">Monitoring Progress DO Bahan Ajar</a>
+        <a href="#">Rekap Bahan Ajar</a>
+      </div>
+    </div>
+
+    <a href="#">Histori Transaksi Bahan Ajar</a>
+  <a href="#" onclick="logout()" class="login">Keluar</a>
+
+  </div>
+
+  <div class="container-dashboard" style="padding:20px">
+  <h2>Dashboard Aplikasi SITTA</h2>
+
+  <div class="pembungkus-lacak">
+    <h5>Lacak pengiriman bahan ajar</h5>
+    <!-- ubah: tambahkan type="button" -->
+    <form>
+      <input type="text" id="inputDO" placeholder="Masukan Nomor Delivery Order" />
+      <button type="button" id="btnCari">Cari</button>
+    </form>
+  </div>
+
+  <p id="greeting"></p>
+  <p id="userInfo" style="font-weight:bold; color:#333"></p>
+</div>
+
+<script src="./js/data.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/dashboard.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Proteksi halaman — redirect ke login jika belum login
+    checkAuth("./index.html");
+
+    // Menampilkan nama user di navbar/dashboard
+    showUserInfo("#userInfo");
+
+    // Greeting waktu (boleh tetap)
+    const greeting = document.getElementById("greeting");
+    const hour = new Date().getHours();
+    if (hour < 12) greeting.textContent = "Selamat pagi";
+    else if (hour < 18) greeting.textContent = "Selamat siang";
+    else greeting.textContent = "Selamat sore";
+  });
+</script>
+
+
+
+</body>
+</html>

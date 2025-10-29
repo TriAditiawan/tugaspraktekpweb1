@@ -1,0 +1,398 @@
+@font-face {
+  font-family: "Poppins";
+  src: url(https://triaditiawan.github.io/formlogin.github.io/Poppins-Regular.ttf);
+}
+
+/* ====== RESET & BODY ====== */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+
+}
+
+/* ====== GRID LOGIN ====== */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 1000px;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px black;
+}
+
+.img-pembungkus {
+  position: relative;
+  background: url(/assets/rakbuku.jpg) center/cover no-repeat;
+  border-radius: 5px 0 0 5px;
+}
+
+.img-pembungkus::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.img-pembungkus h2,
+.img-pembungkus p {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+  width: 350px;
+  margin: 200px auto 0;
+}
+
+.img-pembungkus h2 {
+  font-size: 32px;
+}
+
+.img-pembungkus p {
+  font-size: 16px !important;
+  margin-top: 10px !important;
+}
+
+/* ====== FORM ====== */
+.isi-formlogin{
+  min-height: 100vh;
+  background-color: rgb(31, 31, 31);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.isi-formlogin form {
+  width: 80%;
+  margin: 100px auto;
+  background-color: #fff;
+}
+
+.isi-formlogin form h2 {
+  margin-bottom: 25px;
+}
+
+label,
+input {
+  display: block;
+  width: 100%;
+}
+
+label {
+  font-size: 16px;
+  margin: 15px 0 5px;
+}
+
+input {
+  font-size: 18px;
+  padding: 7px 0;
+  border: none;
+  border-bottom: 1px solid #1c1919;
+  outline: none;
+}
+
+.form-text {
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.garis-pemanis {
+  width: 80px;
+  height: 5px;
+  border-radius: 5px;
+  margin: 10px 0 15px;
+  background-color: rgb(48, 48, 50);
+}
+
+.lupa-pw,
+.belom-pa {
+  display: block;
+  width: 100%;
+}
+
+.lupa-pw {
+  margin: 15px 0 0 250px;
+}
+
+.belom-pa {
+  margin: 5px 100px;
+}
+
+/* ====== BUTTON ====== */
+button {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #fff;
+  border: 1px solid rgb(41, 41, 41);
+  border-radius: 5px;
+  margin: 20px 0 15px;
+  background: linear-gradient(135deg, rgb(41, 41, 41), rgb(80, 80, 80));
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(-135deg, rgb(41, 41, 41), rgb(80, 80, 80));
+}
+
+.copy {
+  margin: 100px 0;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background-color: #222;
+  padding: 0 20px;
+}
+
+.navbar img {
+  width: 25px;
+  margin: 0;
+}
+
+.navbar .login {
+  margin-left: auto;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 20px;
+  display: block;
+}
+
+.navbar a:hover,
+.dropdown:hover > a {
+  background-color: #555;
+}
+
+/* ====== DROPDOWN ====== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  padding: 10px 16px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ====== DASHBOARD ====== */
+.container-dashboard {
+  min-height: 200vh;
+  background-color: #e0e0e0;
+}
+
+/* ====== STOCK PAGE ====== */
+.header {
+  background-color: #282a29;
+  color: #fff;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.image-section {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.image-section img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(53, 51, 51, 0.2);
+}
+
+.form-section {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #333534;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* ====== TRACKING ====== */
+.isi {
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.container {
+  width: 60%;
+  padding: 25px 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #292d2d;
+}
+
+.info {
+  margin-top: 20px;
+}
+
+.info p {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+/* ====== PROGRESS BAR ====== */
+.progress-container {
+  width: 100%;
+  height: 20px;
+  margin: 25px 0;
+  border-radius: 20px;
+  background-color: #e0e0e0;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 65%;
+  border-radius: 20px;
+  background-color: #646072;
+  transition: width 0.4s ease;
+}
+
+/* ====== TABLE ====== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+/* ====== TIMELINE ====== */
+.timeline {
+  position: relative;
+  margin-top: 30px;
+  padding-left: 25px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 9px;
+  width: 2px;
+  height: 100%;
+  background-color: #ccc;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -2px;
+  width: 12px;
+  height: 12px;
+  background-color: #5d5748;
+  border-radius: 50%;
+}
+
+.timeline-item strong {
+  display: block;
+  color: #333;
+}
+
+.timeline-item span {
+  font-size: 13px;
+  color: #666;
+}
+ .pembungkus-lacak{
+  margin: 25px 0;
+  width: 500px;
+ }
+ .pembungkus-lacak form{
+ display: flex; 
+    align-items: center; 
+    width: 600px ;
+ }
+ .pembungkus-lacak h5{
+  font-size: 22px;
+ }
+ .pembungkus-lacak form input {
+  flex-grow: 1; 
+    flex-basis: 80%; 
+    padding: 10px; 
+    border: 1px solid #ccc;
+    margin-right: 10px; 
+ }
+     .pembungkus-lacak form button{
+    flex-basis: 20%; 
+    padding: 10px; 
+    white-space: nowrap; 
+    border: none;
+    cursor: pointer;
+     }

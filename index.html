@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Login</title>
+</head>
+<body>
+<div class="isi-formlogin">
+  <div class="pengkungkus-utama grid">
+    <div class="img-pembungkus">
+      <img src="" alt="">
+      <h2>Aplikasi pemesanan bahan ajar SITTA</h2>
+      <p>Tugas praktek pemrograman website</p>
+    </div>
+    <div>
+      <form id="loginForm" action="">
+  <h2>Selamat datang</h2>
+  <div class="mb-3">
+    <label for="email">Email address</label>
+    <input type="text" id="email" placeholder="Email" />
+  </div>
+
+  <div class="mb-3">
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Password" />
+  </div>
+
+  <button type="submit">Masuk</button>
+  <p id="loginError" style="color: red; display:none;"></p>
+</form>
+    </div>
+  </div>
+</div>
+
+<script src="./js/data.js"></script>
+<script src="./js/script.js"></script>
+<script>
+  document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("passsword").value.trim();
+
+  if (login(email, password)) {
+    window.location.href = "./dashboard.html"; // redirect ke dashboard
+  } else {
+    alert("Email atau password salah!");
+  }
+});
+</script>
+</body>
+</html>
