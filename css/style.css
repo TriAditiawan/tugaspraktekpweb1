@@ -28,7 +28,7 @@ body {
 
 .img-pembungkus {
   position: relative;
-  background: url(/assets/rakbuku.jpg) center/cover no-repeat;
+  background: url(https://triaditiawan.github.io/tugaspraktekpweb1/assets/rakbuku.jpg) center/cover no-repeat;
   border-radius: 5px 0 0 5px;
 }
 
@@ -396,3 +396,4 @@ th {
     border: none;
     cursor: pointer;
      }
+
